@@ -9,5 +9,17 @@ public class Bank {
         this.branches = new ArrayList<>();
     }
 
+    public boolean addBranches(String name) {
+        Branch branch = new Branch(name);
+
+        if(branches.add(branch)){
+            return true;
+        }
+        return false;
+    }
+
+
+
+
 
 }
