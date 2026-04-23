@@ -18,6 +18,17 @@ public class Bank {
         return false;
     }
 
+    public boolean addCustomer(String branchName, String name, double transaction){
+
+        Branch branch = new Branch(branchName);
+        if(branch.newCustomer(name, transaction)){
+            return true;
+        }
+
+        return false;
+    }
+
+
 
 
 
