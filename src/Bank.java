@@ -20,13 +20,35 @@ public class Bank {
 
     public boolean addCustomer(String branchName, String name, double transaction){
 
-        Branch branch = new Branch(branchName);
+        Branch branch = findBranch(branchName);
         if(branch.newCustomer(name, transaction)){
             return true;
         }
 
         return false;
     }
+
+    public boolean addCustomerTransaction(String branchName, String name, double transaction) {
+        Branch branch = findBranch(branchName);
+
+        if(branch.addCustomerTransaction(name, transaction)) {
+            return  true;
+        }
+
+        return false;
+    }
+
+    public Branch findBranch(String name) {
+        for(Branch branch : branches) {
+            if(branch.getName().equalsIgnoreCase(name)) {
+                return branch;
+            }
+        }
+
+        return null;
+    }
+
+
 
 
 
