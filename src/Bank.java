@@ -48,11 +48,18 @@ public class Bank {
         return null;
     }
 
+    public boolean listCustomers(String branchName, boolean printTransaction) {
+        if(findBranch(branchName) != null) {
+            if(printTransaction == true) {
+                for(Branch branch : branches) {
+                    System.out.println(branch.getCustomers());
+                }
+            }
+            return true;
+        }
 
-
-
-
-
+        return false;
+    }
 
 
 }
